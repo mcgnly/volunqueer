@@ -13,13 +13,15 @@ import TopContainer from './TopContainer';
 const App = () => (
 
   <Router className="app">
-    <div>
-        <Jumbotron className="app-header text-center">
+    <div className="wrap container-fluid">
+        <Jumbotron className="app-header text-center row">
           <img src={logo} className="app-logo" alt="logo" />
-          <h1>Volunqueer</h1>
+          <h1 className="col-xs-12">vol.unque.er</h1>
         </Jumbotron>
 
-      <Route exact path="/" component={TopContainer}/>
+        <main className="app-content row">
+          <Route exact path="/" component={TopContainer}/>
+        </main>
     </div>
   </Router>
 )
