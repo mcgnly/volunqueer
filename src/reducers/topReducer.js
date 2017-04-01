@@ -13,14 +13,10 @@ function topReducer(state=initialState, action){//the initial state gets populat
 			console.log("inside a reducer!");
 			let newTimesCalled = state.timesCalled+1;
 			return {...state, number:action.number, timesCalled:newTimesCalled};
-
-		default:
-			return state;//if the reducer isn't affected by the current action, it can just return the state, unchanged
-	}
-
-	switch (action.type){//every action gets shouted at each reducer, so you have to filter out the noise and catch only the actions you care about
+	
 		case 'ADD_TAG':
-			let newSelectedTags = state.selectedTags.push(action.tag);
+			let newSelectedTags = [...state.selectedTags];
+			newSelectedTags.push(action.tag);
 			return {...state, selectedTags:newSelectedTags};
 
 		default:
