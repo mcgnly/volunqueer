@@ -74,8 +74,6 @@ export default ({ }) => {
 			</DropdownButton>
         </FormGroup>
 	</form>
-
-Pick some categories relating to your mission- how are you changing the world?
            <Link to="/thanks">
                   <Button bsStyle="primary">Submit your organization's task for review</Button>
            </Link>
