@@ -13,19 +13,24 @@ export default ({ selectedTags }) => {
     return selectedTags.includes(task.field_of_work);
   });
 
-	let makeTaskCards = filterdOrgs.map((task, index) => {
-		return (
-      <div key={index} className="row">
-			     <OrgCard org={task}/>
-      </div>
-		);
-	});
+	let makeTaskCards = () => {
+    let toDisplay = filterdOrgs.length ? filterdOrgs : orgsData;
+
+    return toDisplay.map((task, index) => {
+  		return (
+        <div key={index} className="row">
+  			     <OrgCard org={task}/>
+        </div>
+  		);
+  	});
+
+  }
 
     return (
 	<article className="col-xs-12">
 		<p className="lead">Here are some tasks and organizations that you might be interested in:</p>
 		<section className="org-list">
-		    {makeTaskCards}
+		    {makeTaskCards()}
 		</section>
 		<section >
 		<h4>Didn't find what you were looking for?</h4>

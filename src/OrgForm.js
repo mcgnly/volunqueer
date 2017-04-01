@@ -23,17 +23,12 @@ export default ({ }) => {
 
     return (
 	<article className="text-center">
-    <section className="lead-cta col-xs-12">
+    <section className="col-xs-12 col-xs-12 col-sm-8 col-sm-offset-2">
       <h2>How can we help?</h2>
       <p className="lead">Tell us about your organization!</p>
-      <p className="lead">Please note: this is a platform for volunteering and contributing to the community, not merely unpaid labor. Treat your volunteers with respect, and consider that they are using their free time to help you. </p>
+      <p>Please note: this is a platform for volunteering and contributing to the community, not merely unpaid labor. Treat your volunteers with respect, and consider that they are using their free time to help you. </p>
     </section>
-    <section className="col-xs-12">
-      <ButtonToolbar className="skills-container">
-
-      </ButtonToolbar>
-    </section>
-		<section className="col-xs-12">
+		<section className="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
 
 
 	<form>
@@ -65,7 +60,7 @@ export default ({ }) => {
             type="text"
             placeholder="How are you changing the world?"
           />
-        </FormGroup> 
+        </FormGroup>
 
         <FormGroup controlId="formBasicText">
           <ControlLabel>What kind of task do you need help with? Volunteers will be able to choose what they are most skilled at or willing to do.</ControlLabel>
@@ -81,4 +76,3 @@ export default ({ }) => {
 	</article>
     );
 }
-
