@@ -4,23 +4,27 @@ import { Navbar, Jumbotron, Button } from 'react-bootstrap';
 // import { OrgCard } from './orgcard.js'
 
 export default ({selectedTags}) => {
+	console.log('selectedTags outside', selectedTags)
+	let tagsFromProps = ['a', 'b', 'c'];
 
-	function makeTaskCards(taskList) {
-		taskList.map((task)=>{
+	let makeTaskCards = 
+		selectedTags.map((task) => {
+		console.log('selectedTags inside', selectedTags);
 			return (
-			<li id="cause3" > some kind of org/task thing </li>
+				<li id={task} > {task} </li>
 			);
-		})
-		
-	}
+		});
+
 
     return (
 	<div>
 		<h2>Here are some tasks and organizations that you might be interested in:</h2>
-		{makeTaskCards(["a", "b", "c"])}
+		<ul>
+		{makeTaskCards}
+		</ul>
 
 	</div>
     );
-}
+};
 
 //TODO: don't open link in new tab???
