@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   BrowserRouter as Router,
-  Route,
-  Link
+  Route
 } from 'react-router-dom';
+import { Jumbotron } from 'react-bootstrap';
+
 import logo from './unicorn.png';
 import './App.css';
 import TopContainer from './TopContainer';
@@ -11,14 +12,12 @@ import TopContainer from './TopContainer';
 
 const App = () => (
 
-  <Router>
+  <Router className="app">
     <div>
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Volunqueer</h2>
-        </div>
-
-      <hr/>
+        <Jumbotron className="app-header text-center">
+          <img src={logo} className="app-logo" alt="logo" />
+          <h1>Volunqueer</h1>
+        </Jumbotron>
 
       <Route exact path="/" component={TopContainer}/>
     </div>
