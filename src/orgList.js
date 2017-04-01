@@ -4,22 +4,18 @@ import { Navbar, Jumbotron, Button } from 'react-bootstrap';
 import { OrgCard } from './OrgCard.js';
 import orgs from './orgs.js';
 
+let orgsData = orgs();
+
 export default ({ selectedTags }) => {
 
-let orgsData = orgs();
-let iterator = 0;
+  let filterdOrgs = orgsData.filter(task => {
+    return selectedTags.includes(task.field_of_work);
+  });
 
-	let makeTaskCards =
-		orgsData.map((task) => {
-			iterator += 1;
-
-			if (selectedTags.indexOf(task.field_of_work) !== -1) {
-				return (
-					<OrgCard key={iterator} org={task}/>
-				);
-			} else {
-				return;
-			}
+	let makeTaskCards = filterdOrgs.map((task, index) => {
+		return (
+			<OrgCard key={index} org={task}/>
+		);
 	});
 
     return (
