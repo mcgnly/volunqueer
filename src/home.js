@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Jumbotron, Button } from 'react-bootstrap';
+import { Button, ButtonToolbar } from 'react-bootstrap';
 import orgs from './orgs.js';
+import './home.css';
 
 export default ({ selectedTags, addTag }) => {
 
@@ -14,7 +15,7 @@ export default ({ selectedTags, addTag }) => {
 			if (alreadyUsed.indexOf(task.field_of_work)===-1){
 				alreadyUsed.push(task.field_of_work);
 				return (
-					<li key={iterator} id={task.field_of_work} onClick={(ev) => { addTag(ev.target.id); } }> {task.field_of_work} </li>
+					<Button key={iterator} id={task.field_of_work} onClick={(ev) => { addTag(ev.target.id); } }> {task.field_of_work} </Button>
 				);
 			} else {
 				return;
@@ -22,15 +23,23 @@ export default ({ selectedTags, addTag }) => {
 	});
 
     return (
-	<div>
-		<h2>Welcome to VolunQueer- what are you interested in?</h2>
+	<article className="text-center">
+    <section className="lead-cta col-xs-12">
+      <h2>Contribute much?</h2>
+      <p className="lead">Pick a few things to help the community out with</p>
+    </section>
+    <section className="col-xs-12">
+      <ButtonToolbar className="skills-container">
+        {makeTags}
+      </ButtonToolbar>
+    </section>
+		<section className="col-xs-12">
+      		<Link to="/topics">
+                  <Button bsStyle="primary">Find an organization</Button>
+           </Link>
 
-		<ul>
-			{makeTags}
-		</ul>
-
-		<li><Link to="/topics">Find an organization</Link></li>
-
-	</div>
+    </section>
+	</article>
     );
-};
+}
+
