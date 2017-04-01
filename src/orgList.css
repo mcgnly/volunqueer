@@ -1,3 +1,8 @@
 .org-list {
   padding: 0 20px;
 }
+
+/*.org-list .row {
+  border-bottom: 1px solid #28587C;
+  margin-bottom: 20px;
+}*/

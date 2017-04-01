@@ -29,8 +29,7 @@ export default ({ selectedTags }) => {
 		</section>
 		<section style={
 		    {marginTop: '30px',
-		        paddingTop: '30px',
-		        borderTop: '1px solid'}
+		        paddingTop: '30px'}
 		}>
 		<h4>Didn't find what you were looking for?</h4>
 		<form>
@@ -45,7 +44,7 @@ export default ({ selectedTags }) => {
 	          />
 	        </FormGroup>
 	    </form>
-	    
+
 	    <Link to="/volunteerThanks">
                   <Button bsStyle="primary">Sign me up!</Button>
         </Link>
