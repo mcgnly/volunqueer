@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Route
+  Route, Link
 } from 'react-router-dom';
 import { Jumbotron } from 'react-bootstrap';
 
@@ -15,10 +15,12 @@ const App = () => (
 
   <Router className="app">
     <div className="wrap container-fluid">
+      <Link to="/">
         <Jumbotron className="app-header text-center row">
           <img src={logo} className="app-logo" alt="logo" />
           <h1 className="col-xs-12">vol.unque.er</h1>
         </Jumbotron>
+      </Link>
 
 
         <main className="app-content row">
