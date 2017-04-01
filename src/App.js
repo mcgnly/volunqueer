@@ -9,6 +9,8 @@ import logo from './unicorn.png';
 import './App.css';
 import TopContainer from './TopContainer';
 import OrgListContainer from './OrgListContainer';
+import OrgForm from './OrgForm';
+import OrgThanks from './OrgThanks';
 
 
 const App = () => (
@@ -26,6 +28,8 @@ const App = () => (
         <main className="app-content row">
           <Route exact path="/" component={TopContainer}/>
           <Route path="/topics" component={OrgListContainer}/>
+          <Route path="/orgs" component={OrgForm}/>
+          <Route path="/thanks" component={OrgThanks}/>
         </main>
 
     </div>

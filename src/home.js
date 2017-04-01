@@ -31,7 +31,9 @@ export default ({ selectedTags, toggleTag }) => {
       		<Link to="/topics">
                   <Button bsStyle="primary">Find an organization</Button>
            </Link>
-
+           <Link to="/orgs">
+                  <Button bsStyle="primary">I am an organization looking for volunteers!</Button>
+           </Link>
     </section>
 	</article>
   );
