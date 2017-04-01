@@ -11,6 +11,7 @@ import TopContainer from './TopContainer';
 import OrgListContainer from './OrgListContainer';
 import OrgForm from './OrgForm';
 import OrgThanks from './OrgThanks';
+import VolunteerThanks from './volunteerThanks';
 
 
 const App = () => (
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/topics" component={OrgListContainer}/>
           <Route path="/orgs" component={OrgForm}/>
           <Route path="/thanks" component={OrgThanks}/>
+          <Route path="/volunteerThanks" component={VolunteerThanks}/>
         </main>
 
     </div>
