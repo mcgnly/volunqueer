@@ -45,7 +45,7 @@ const App = () => (
 
       <hr/>
 
-      <Route exact path="/" component={Home}/>
+      <Route exact path="/" component={TopContainer}/>
       <Route path="/about" component={About}/>
       <Route path="/topics" component={Topics}/>
     </div>

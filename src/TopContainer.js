@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Top from './components/top';
+import Top from './top';
 import {connect} from 'react-redux';
 import {randomNumberAction} from './actions/topActions.js'
 
