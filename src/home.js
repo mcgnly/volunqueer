@@ -12,7 +12,7 @@ let uniqueTags = [...new Set(orgsData.map((org) => {
 export default ({ selectedTags, toggleTag }) => {
   let fieldTags = uniqueTags.map((field, index) => {
     return (
-      <Button key={index} id={"field-" + index} onClick={(ev) => { toggleTag(field); } }> {field} </Button>
+      <Button className={(selectedTags.includes(field)) ? 'btn-success' : ''} key={index} id={"field-" + index} onClick={(ev) => { toggleTag(field); } }> {field} </Button>
     );
   });
 
