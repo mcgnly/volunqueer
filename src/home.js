@@ -28,10 +28,9 @@ export default ({ selectedTags, toggleTag }) => {
       </ButtonToolbar>
     </section>
 		<section className="col-xs-12">
-      		<Link to="/topics">
-                  <Button bsStyle="primary">Find an organization</Button>
-           </Link>
-
+      <Link to="/topics">
+        <Button bsStyle="primary">Find an organization</Button>
+      </Link>
     </section>
 	</article>
   );
