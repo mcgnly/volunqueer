@@ -27,7 +27,7 @@ export default ({ selectedTags }) => {
   }
 
     return (
-	<article className="col-xs-12">
+	<article className="col-xs-12 col-md-8 col-md-offset-2">
 		<p className="lead">Here are some tasks and organizations that you might be interested in:</p>
 		<section className="org-list">
 		    {makeTaskCards()}

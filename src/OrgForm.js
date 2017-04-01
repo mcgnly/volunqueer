@@ -23,7 +23,7 @@ export default ({ }) => {
 
     return (
 	<article className="text-center">
-    <section className="col-xs-12 col-xs-12 col-sm-8 col-sm-offset-2">
+    <section className="col-xs-12 col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
       <h2>How can we help?</h2>
       <p className="lead">Tell us about your organization!</p>
       <p>Please note: this is a platform for volunteering and contributing to the community, not merely unpaid labor. Treat your volunteers with respect, and consider that they are using their free time to help you. </p>
