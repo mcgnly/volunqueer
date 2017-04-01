@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 import { Jumbotron } from 'react-bootstrap';
 
-import logo from './unicorn.png';
+import logo from './logo2.png';
 import './App.css';
 import TopContainer from './TopContainer';
 import OrgListContainer from './OrgListContainer';
@@ -19,9 +19,9 @@ const App = () => (
   <Router className="app">
     <div className="wrap container-fluid">
       <Link to="/">
-        <Jumbotron className="app-header text-center row">
+        <Jumbotron className="app-header text-center row" style={
+        {borderRadius:"0px"}}>
           <img src={logo} className="app-logo" alt="logo" />
-          <h1 className="col-xs-12">vol.unque.er</h1>
         </Jumbotron>
       </Link>
 
