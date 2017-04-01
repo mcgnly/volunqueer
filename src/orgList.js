@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Navbar, Jumbotron, Button } from 'react-bootstrap';
 import { OrgCard } from './OrgCard.js';
 import orgs from './orgs.js';
+import './orgList.css';
 
 let orgsData = orgs();
 
@@ -14,17 +15,18 @@ export default ({ selectedTags }) => {
 
 	let makeTaskCards = filterdOrgs.map((task, index) => {
 		return (
-			<OrgCard key={index} org={task}/>
+      <div key={index} className="row">
+			     <OrgCard org={task}/>
+      </div>
 		);
 	});
 
     return (
-	<div>
-		<h2>Here are some tasks and organizations that you might be interested in:</h2>
-		<ul>
-		{makeTaskCards}
-		</ul>
-
-	</div>
+	<article className="col-xs-12">
+		<p className="lead">Here are some tasks and organizations that you might be interested in:</p>
+		<section className="org-list">
+		    {makeTaskCards}
+		</section>
+	</article>
     );
 };

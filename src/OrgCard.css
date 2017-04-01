@@ -1,0 +1,8 @@
+.org-card {
+  border-bottom: 1px solid #28587C;
+  margin-bottom: 20px;
+}
+
+.org-logo img {
+  display: inline;
+}
