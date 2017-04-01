@@ -14,7 +14,9 @@ export default ({selectedTags, addTag}) => {
 			<li id="cause2" onClick={(ev)=>{addTag(ev.target.id)}}> some kind of tag thing </li>
 			<li id="cause3" onClick={(ev)=>{addTag(ev.target.id)}}> some kind of tag thing </li>
 		</ul>
-			Find an organization
+
+		<li><Link to="/topics">Find an organization</Link></li>
+			
 	</div>
     );
 }

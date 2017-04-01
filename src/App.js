@@ -9,6 +9,7 @@ import './App.css';
 import { Navbar, Jumbotron, Button } from 'react-bootstrap';
 import Home from './home.js';
 import TopContainer from './TopContainer';
+import OrgListContainer from './OrgListContainer';
 
 
 const App = () => (
@@ -29,7 +30,7 @@ const App = () => (
 
       <Route exact path="/" component={TopContainer}/>
       <Route path="/about" component={About}/>
-      <Route path="/topics" component={Topics}/>
+      <Route path="/topics" component={OrgListContainer}/>
     </div>
   </Router>
 )
