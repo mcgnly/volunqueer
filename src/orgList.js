@@ -3,40 +3,33 @@ import { Link } from 'react-router-dom';
 import { Navbar, Jumbotron, Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 import { OrgCard } from './OrgCard.js';
 import orgs from './orgs.js';
+import './orgList.css';
+
+let orgsData = orgs();
 
 export default ({ selectedTags }) => {
 
-let orgsData = orgs();
-let iterator = 0;
+  let filterdOrgs = orgsData.filter(task => {
+    return selectedTags.includes(task.field_of_work);
+  });
 
-	let makeTaskCards =
-		orgsData.map((task) => {
-			iterator += 1;
-			if (selectedTags.length < 1) {
-				return <OrgCard key={iterator} org={task}/>
-			} else {
-				if (selectedTags.indexOf(task.field_of_work) !== -1) {
-					return (
-						<OrgCard key={iterator} org={task}/>
-					);
-				} else {
-					return;
-				}
-				
-			}
-
+	let makeTaskCards = filterdOrgs.map((task, index) => {
+		return (
+      <div key={index} className="row">
+			     <OrgCard org={task}/>
+      </div>
+		);
 	});
 
     return (
-	<div>
-		<h2>Here are some tasks and organizations that you might be interested in:</h2>
-		<ul>
-		{makeTaskCards}
-		</ul>
+	<article className="col-xs-12">
+		<p className="lead">Here are some tasks and organizations that you might be interested in:</p>
+		<section className="org-list">
+		    {makeTaskCards}
+		</section>
 		<section style={
 		    {marginTop: '30px',
-		        paddingTop: '30px',
-		        borderTop: '1px solid'}
+		        paddingTop: '30px'}
 		}>
 		<h4>Didn't find what you were looking for?</h4>
 		<form>
@@ -51,11 +44,11 @@ let iterator = 0;
 	          />
 	        </FormGroup>
 	    </form>
-	    
+
 	    <Link to="/volunteerThanks">
                   <Button bsStyle="primary">Sign me up!</Button>
         </Link>
         </section>
-	</div>
+	</article>
     );
 };

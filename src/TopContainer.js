@@ -13,21 +13,18 @@ class TopContainer extends Component{//Component is coming from React
 
 		//Note: components HAVE to have capitalized names or else they won't work.
 		return(
-				<div className = "container">
-					<Home selectedTags={selectedTags} toggleTag={toggleTag} />
-				</div>
+      <Home selectedTags={selectedTags} toggleTag={toggleTag} />
 			);
 	}
 }
-					// <Top  r={number} randomNumberAction={randomNumberAction} timesCalled={timesCalled}/>
 
 function mapStateToProps(state){//gets invoked in the connect function below
 	console.log (state);
 	return{
 		//state.values go here
-        number : state.topReducer.number,
-        timesCalled : state.topReducer.timesCalled,
-        selectedTags: state.topReducer.selectedTags
+    number : state.topReducer.number,
+    timesCalled : state.topReducer.timesCalled,
+    selectedTags: state.topReducer.selectedTags
 	}
 }
 

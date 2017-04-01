@@ -12,13 +12,10 @@ class OrgListContainer extends Component{//Component is coming from React
 
 		//Note: components HAVE to have capitalized names or else they won't work.
 		return(
-				<div className = "container">
-					<OrgList selectedTags={selectedTags} />
-				</div>
-			);
+			<OrgList selectedTags={selectedTags} />
+		);
 	}
 }
-					// <OrgList  r={number} randomNumberAction={randomNumberAction} timesCalled={timesCalled}/>
 
 function mapStateToProps(state){//gets invoked in the connect function below
 	console.log (state);
@@ -30,5 +27,4 @@ function mapStateToProps(state){//gets invoked in the connect function below
 //connect is the magic redux function that connects the state and the actions to the props that can be used by the app
 export default connect(mapStateToProps,{
 	//actions go here so you can dispatch them properly
-
 })(OrgListContainer);
