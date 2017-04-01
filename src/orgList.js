@@ -11,11 +11,15 @@ let iterator = 0;
 
 	let makeTaskCards =
 		orgsData.map((task) => {
-			iterator+=1;
-			console.log('task', task)
-			return (
-				<OrgCard key={iterator} org={task}/>
-			);
+			iterator += 1;
+
+			if (selectedTags.indexOf(task.field_of_work) !== -1) {
+				return (
+					<OrgCard key={iterator} org={task}/>
+				);
+			} else {
+				return;
+			}
 	});
 
     return (
