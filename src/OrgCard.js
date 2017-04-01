@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class OrgCard extends Component {
+export class OrgCard extends Component {
   
   constructor(props) {
     super(props);
@@ -27,4 +27,4 @@ class OrgCard extends Component {
   }
 }
 
-export default OrgCard;
+// export default OrgCard;
