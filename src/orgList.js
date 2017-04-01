@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Jumbotron, Button } from 'react-bootstrap';
+import { Navbar, Jumbotron, Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 import { OrgCard } from './OrgCard.js';
 import orgs from './orgs.js';
 import './orgList.css';
@@ -27,6 +27,29 @@ export default ({ selectedTags }) => {
 		<section className="org-list">
 		    {makeTaskCards}
 		</section>
+		<section style={
+		    {marginTop: '30px',
+		        paddingTop: '30px',
+		        borderTop: '1px solid'}
+		}>
+		<h4>Didn't find what you were looking for?</h4>
+		<form>
+	        <FormGroup
+	          controlId="formBasicText"
+	        >
+	        	<p>add your email here and we will send you a weekly digest of new organizations and tasks that match your selected interests:</p>
+	          <ControlLabel>email:</ControlLabel>
+	          <FormControl
+	            type="text"
+	            placeholder="Where can we reach you?"
+	          />
+	        </FormGroup>
+	    </form>
+	    
+	    <Link to="/volunteerThanks">
+                  <Button bsStyle="primary">Sign me up!</Button>
+        </Link>
+        </section>
 	</article>
     );
 };

@@ -2,12 +2,6 @@
     display: inline-block;
     margin-bottom: 20px;
 }
-
-.btn-toolbar > .btn{
-    margin-left: 5px;
-    margin-bottom: 5px;
-}
-
 .btn-primary{
-	margin: 5px;
+	margin-top: 25px;
 }
