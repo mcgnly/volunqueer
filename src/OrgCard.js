@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-class OrgCard extends Component {
+export class OrgCard extends Component {
   
   constructor(props) {
     super(props);
     this.org = this.props.org
-    console.log(this.props);
+    this.org.work = this.props.org['field-of-work']
   }
 
 
@@ -18,8 +18,8 @@ class OrgCard extends Component {
         <div className="org-info">
           <h2 className="org-name">{this.org.name}</h2>
           <p className="org-mission">{this.org.mission}</p>
-          <p className="need-descritpion">this.org.description</p>
-          <p className="need-field">this.org.field-of-work</p>
+          <p className="need-descritpion">{this.org.description}</p>
+          <p className="need-field">{this.org.work}</p>
           <p className="org-cta"><a href={"mailto:" + this.org.contact}>Apply</a></p>
         </div>
       </div>
@@ -27,4 +27,4 @@ class OrgCard extends Component {
   }
 }
 
-export default OrgCard;
+// export default OrgCard;

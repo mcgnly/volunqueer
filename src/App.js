@@ -8,6 +8,7 @@ import { Jumbotron } from 'react-bootstrap';
 import logo from './unicorn.png';
 import './App.css';
 import TopContainer from './TopContainer';
+import OrgListContainer from './OrgListContainer';
 
 
 const App = () => (
@@ -19,9 +20,12 @@ const App = () => (
           <h1 className="col-xs-12">vol.unque.er</h1>
         </Jumbotron>
 
+
         <main className="app-content row">
           <Route exact path="/" component={TopContainer}/>
+          <Route path="/topics" component={OrgListContainer}/>
         </main>
+
     </div>
   </Router>
 )
