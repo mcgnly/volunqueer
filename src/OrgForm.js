@@ -1,10 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button, ButtonToolbar } from 'react-bootstrap';
+import { Button, ButtonToolbar, DropdownButton, MenuItem, FormGroup, FormControl, ControlLabel, HelpBlock } from 'react-bootstrap';
 import orgs from './orgs.js';
-import './home.css';
+import './orgform.css';
 
 export default ({ }) => {
+	let orgsData = orgs();
+	let iterator = 0;
+	let alreadyUsed = [];
+	let menuMaker =
+		orgsData.map((task) => {
+			iterator+=1;
+			if (alreadyUsed.indexOf(task.field_of_work)===-1){
+				alreadyUsed.push(task.field_of_work);
+				return (
+					<MenuItem eventKey={iterator}>{task.field_of_work}</MenuItem>
+				);
+			} else {
+				return;
+			}
+	});
 
     return (
 	<article className="text-center">
@@ -20,16 +35,47 @@ export default ({ }) => {
     </section>
 		<section className="col-xs-12">
 
-<div class="input-group">
-	<h3>What is your organization called?</h3>
-  <input type="text" class="form-control" placeholder="Organization Name" />
-  <h3>Describe the mission- how are you saving the world?</h3>
-  <input type="text" class="form-control" placeholder="Describe your mission" />
-  <h3>What Kind of task do you need help with? Volunteers will be able to choose what they are most skilled at or willing to do. </h3>
-  <input type="text" class="form-control" placeholder="task" />
-</div>
 
+	<form>
+        <FormGroup
+          controlId="formBasicText"
+        >
+          <ControlLabel>What is the name of the organization?</ControlLabel>
+          <FormControl
+            type="text"
+            placeholder="What are you called?"
+          />
+        </FormGroup>
 
+        <FormGroup
+          controlId="formBasicText"
+        >
+          <ControlLabel>Tell us something about your organization: </ControlLabel>
+          <FormControl
+            type="text"
+            placeholder="Description of your organization"
+          />
+        </FormGroup>
+
+               <FormGroup
+          controlId="formBasicText"
+        >
+          <ControlLabel>Tell us something about your mission: </ControlLabel>
+          <FormControl
+            type="text"
+            placeholder="How are you changing the world?"
+          />
+        </FormGroup> 
+
+        <FormGroup controlId="formBasicText">
+          <ControlLabel>What kind of task do you need help with? Volunteers will be able to choose what they are most skilled at or willing to do.</ControlLabel>
+        	<DropdownButton title='Task Category'>
+				{menuMaker}
+			</DropdownButton>
+        </FormGroup>
+	</form>
+
+Pick some categories relating to your mission- how are you changing the world?
            <Link to="/thanks">
                   <Button bsStyle="primary">Submit your organization's task for review</Button>
            </Link>
