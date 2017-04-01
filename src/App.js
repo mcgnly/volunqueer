@@ -7,7 +7,8 @@ import {
 import logo from './unicorn.png';
 import './App.css';
 import { Navbar, Jumbotron, Button } from 'react-bootstrap';
-import Home from './home.js'
+import Home from './home.js';
+import TopContainer from './TopContainer';
 
 
 const App = () => (
@@ -23,7 +24,6 @@ const App = () => (
 
   //     </div>
   //   );
-  // }
 
 
 
