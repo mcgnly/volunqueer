@@ -27,10 +27,7 @@ export default ({ selectedTags }) => {
 		<section className="org-list">
 		    {makeTaskCards}
 		</section>
-		<section style={
-		    {marginTop: '30px',
-		        paddingTop: '30px'}
-		}>
+		<section >
 		<h4>Didn't find what you were looking for?</h4>
 		<form>
 	        <FormGroup

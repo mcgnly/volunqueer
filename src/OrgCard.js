@@ -13,7 +13,7 @@ export class OrgCard extends Component {
 
   render() {
     return (
-      <div className="org-card">
+      <div className="org-card clearfix">
         <div className="org-logo col-sm-3 text-center">
           <img className="img-responsive img-thumbnail" src={this.org.logo} alt={this.org.name} />
         </div>
