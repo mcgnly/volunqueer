@@ -1,20 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Jumbotron, Button } from 'react-bootstrap';
-// import { OrgCard } from './orgcard.js'
+import { OrgCard } from './OrgCard.js';
+import orgs from './orgs.js';
 
-export default ({selectedTags}) => {
-	console.log('selectedTags outside', selectedTags)
-	let tagsFromProps = ['a', 'b', 'c'];
+export default ({ selectedTags }) => {
 
-	let makeTaskCards = 
-		selectedTags.map((task) => {
-		console.log('selectedTags inside', selectedTags);
+let orgsData = orgs();
+let iterator = 0;
+
+	let makeTaskCards =
+		orgsData.map((task) => {
+			iterator+=1;
+			console.log('task', task)
 			return (
-				<li id={task} > {task} </li>
+				<OrgCard key={iterator} org={task}/>
 			);
-		});
-
+	});
 
     return (
 	<div>
@@ -26,5 +28,3 @@ export default ({selectedTags}) => {
 	</div>
     );
 };
-
-//TODO: don't open link in new tab???
