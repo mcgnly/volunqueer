@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import OrgList from './orgList';
 import {connect} from 'react-redux';
-// import {randomNumberAction, addTag} from './actions/OrgListActions.js'
+'./actions/OrgListActions.js'
 
 class OrgListContainer extends Component{//Component is coming from React
-	
+
 	render(){//render is coming from component
-		//Note: if your action isn't working, it's probably because you are trying to run it directly out of the import, 
-			//without remembering to bring it in from the props. It won't dispatch properly to the reducer if you forget. 
+		//Note: if your action isn't working, it's probably because you are trying to run it directly out of the import,
+			//without remembering to bring it in from the props. It won't dispatch properly to the reducer if you forget.
 		const { selectedTags } = this.props;
 
 		//Note: components HAVE to have capitalized names or else they won't work.
@@ -23,9 +23,7 @@ class OrgListContainer extends Component{//Component is coming from React
 function mapStateToProps(state){//gets invoked in the connect function below
 	console.log (state);
 	return{
-		//state.values go here
-
-        selectedTags: state.topReducer.selectedTags
+    selectedTags: state.topReducer.selectedTags
 	}
 }
 
